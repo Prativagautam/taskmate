@@ -1,7 +1,9 @@
 // import {useState} from 'react'
 import { Header } from './components/Header'
+import { Footer } from './components/Footer'
 import {TaskList} from "./components/TaskList"
 import './App.css'
+import {AddTask} from "./components/AddTask"
 
 // example one for useState implementation
 // export const App = () => {
@@ -43,8 +45,9 @@ export const App = () => {
   return (
     <div className="App">
       <Header/>
-      <TaskList title="random"/>
-
+      <AddTask/>
+      <TaskList />
+      <Footer/>
     </div>
   )
 }
