@@ -1,4 +1,4 @@
-// import {useState} from 'react'
+import {useState} from 'react'
 import { Header } from './components/Header'
 import { Footer } from './components/Footer'
 import {TaskList} from "./components/TaskList"
@@ -42,11 +42,17 @@ export const App = () => {
   // function handleDelete(id){
   //   setTasks(tasks.filter(task=>id!==task.id))
   // }
+   // this tasklist is brought here so we can acess it fromchild componet .if it was included in tasklist.js we couldnot access it in sibling component addtask.js
+    const [tasks, setTasks] = useState([]);
+
+      
   return (
     <div className="App">
       <Header/>
-      <AddTask/>
-      <TaskList />
+      <main>
+      <AddTask tasks={tasks} setTasks={setTasks}/>
+      <TaskList tasks={tasks} setTasks={setTasks}/>
+      </main>
       <Footer/>
     </div>
   )
